@@ -1,17 +1,31 @@
-name:python script workflow
-on:
-push:
-branch:
--main
-jobs:
-run_python_script:
-name:Run hello.py
-runs-on:ubuntu-latest
-steps:
-- name:checkout repository
-uses:action/checkout@y2
-- name set name python@y2
-with:
-python-version:'3.12'#use the python version you need
-- name:run tsting.py
-run: pythontsting.py
+import pandas as pd
+
+# Define two matrices as lists of lists
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+
+matrix2 = [[9, 8, 7],
+           [6, 5, 4],
+           [3, 2, 1]]
+
+# Convert the matrices to pandas DataFrames
+df1 = pd.DataFrame(matrix1)
+df2 = pd.DataFrame(matrix2)
+
+# Perform matrix addition
+result_addition = df1 + df2
+
+# Perform matrix subtraction
+result_subtraction = df1 - df2
+
+# Perform matrix multiplication
+result_multiplication = df1.dot(df2)
+
+# Print the results
+print("Matrix Addition:")
+print(result_addition)
+print("\nMatrix Subtraction:")
+print(result_subtraction)
+print("\nMatrix Multiplication:")
+print(result_multiplication)
