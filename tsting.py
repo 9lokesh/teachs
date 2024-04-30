@@ -14,4 +14,4 @@ uses:action/checkout@y2
 with:
 python-version:'3.12'#use the python version you need
 - name:run tsting.py
-run:pythontsting.py
+run: pythontsting.py
